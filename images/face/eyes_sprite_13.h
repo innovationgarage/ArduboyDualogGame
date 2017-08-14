@@ -1,0 +1,8 @@
+#pragma once
+
+unsigned char const eyes_sprite_13[] PROGMEM =
+{
+  47, 47,
+  0xc0, 0xce, 0x8d, 0xd5, 0xc1, 0x83, 0x02, 
+};
+

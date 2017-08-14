@@ -1,0 +1,8 @@
+#pragma once
+
+unsigned char const nose_sprite_02[] PROGMEM =
+{
+  47, 47,
+  0x40, 0x9a, 0x46, 0x1f, 0x98, 0x3a, 
+};
+

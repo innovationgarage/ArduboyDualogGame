@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seqview xscroll="0.000000" yscroll="0" zoom="100">
+<sequence maintempo="62" measureAmount="6" currentTrack="1" beatResolution="192" internalName="New Instrument" fileFormatVersion="4" channelManagement="auto" metronome="false">
+
+<measure  firstMeasure="0" denom="4" num="4"/>
+
+<tempo>
+</tempo>
+<text>
+</text>
+<copyright>
+</copyright>
+<defaultkeysig keytype="2" keysymbolamount="0" />
+
+
+<track name="Base" id="0" channel="0" muted="false" soloed="false" volume="100" default_volume="80">
+  <key type="C" />
+  <editors height="278">
+    <score enabled="false" musical_notation="true" linear_notation="true" g_clef="true" f_clef="true" scroll="0.547945"/>
+    <keyboard enabled="true" scroll="0.430182" proportion="1.000000"/>
+    <guitar enabled="false"/>
+    <drum enabled="false" scroll="0.000000"/>
+    <controller enabled="false" controller="7"/>
+  </editors>
+  <magneticgrid divider="8" triplet="false" dotted="false"/>
+  <instrument id="48"/>
+  <drumkit id="0" collapseView="false"/>
+  <guitartuning  string0="67" string1="72" string2="76" string3="81" string4="86" string5="91"/>
+
+  <note pitch="60" start="0" end="192" volume="98"/>
+  <note pitch="57" start="192" end="384" volume="100"/>
+  <note pitch="62" start="384" end="576" volume="100"/>
+  <note pitch="60" start="766" end="958" volume="100"/>
+  <note pitch="57" start="958" end="1150" volume="100"/>
+  <note pitch="50" start="1148" end="1340" volume="100" selected="true"/>
+  <note pitch="59" start="1728" end="1824" volume="80"/>
+  <note pitch="60" start="1824" end="1920" volume="80"/>
+  <note pitch="60" start="1920" end="2016" volume="80"/>
+  <note pitch="60" start="2016" end="2112" volume="80"/>
+  <note pitch="55" start="2112" end="2208" volume="80"/>
+  <note pitch="55" start="2208" end="2304" volume="80"/>
+  <note pitch="55" start="2304" end="2400" volume="80"/>
+  <note pitch="60" start="2400" end="2496" volume="80"/>
+  <note pitch="60" start="2496" end="2592" volume="80"/>
+  <note pitch="60" start="2592" end="2688" volume="80"/>
+  <note pitch="62" start="2688" end="2784" volume="80"/>
+  <note pitch="62" start="2784" end="2880" volume="80"/>
+  <note pitch="62" start="2880" end="2976" volume="80"/>
+  <note pitch="60" start="2976" end="3072" volume="80"/>
+  <note pitch="60" start="3072" end="3168" volume="80"/>
+  <note pitch="60" start="3168" end="3264" volume="80"/>
+  <note pitch="55" start="3264" end="3360" volume="80"/>
+  <note pitch="55" start="3360" end="3456" volume="80"/>
+  <note pitch="55" start="3456" end="3552" volume="80"/>
+</track>
+
+
+<track name="Background" id="1" channel="0" muted="true" soloed="false" volume="30" default_volume="80">
+  <key type="C" />
+  <editors height="128">
+    <score enabled="true" musical_notation="true" linear_notation="true" g_clef="true" f_clef="true" scroll="0.547945" proportion="1.000000"/>
+    <keyboard enabled="false" scroll="0.500000"/>
+    <guitar enabled="false"/>
+    <drum enabled="false" scroll="0.000000"/>
+    <controller enabled="false" controller="7"/>
+  </editors>
+  <magneticgrid divider="8" triplet="false" dotted="false"/>
+  <instrument id="42"/>
+  <drumkit id="0" collapseView="false"/>
+  <guitartuning  string0="67" string1="72" string2="76" string3="81" string4="86" string5="91"/>
+
+  <note pitch="68" start="0" end="576" volume="80" fret="4" string="1"/>
+  <note pitch="67" start="768" end="1344" volume="80" fret="0" string="0"/>
+  <note pitch="61" start="1728" end="2304" volume="80" fret="6" string="0"/>
+  <note pitch="64" start="2400" end="2976" volume="80" fret="3" string="0"/>
+  <note pitch="61" start="2976" end="3552" volume="80" fret="6" string="0" selected="true"/>
+</track>
+
+</sequence></seqview>

@@ -1,0 +1,7 @@
+// Support minigame
+
+void doSupportGame()
+{
+  
+}
+
