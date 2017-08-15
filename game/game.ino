@@ -2,6 +2,8 @@
 #include <ArduboyPlaytune.h>
 //#include <ArduboyTones.h>
 #include <Tinyfont.h>
+#include "Vector2d.h"
+#include "Waves.h"
 
 #include "music.h"
 #include "images.h"
@@ -20,7 +22,7 @@ int gameState = EXPLORING;
 
 void setup() {
   arduboy.begin();
-  arduboy.setFrameRate(30);
+  arduboy.setFrameRate(60);
   arduboy.clear();
 
   //initializeAudio();
