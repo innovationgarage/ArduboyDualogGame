@@ -1,8 +1,3 @@
-#ifndef SEA_H
-#define SEA_H
-
-#include "Vector2d.h"
-
 struct Wave
 {
   float xPosition;
@@ -25,4 +20,3 @@ class Waves
   Wave* _Waves;
 };
 
-#endif

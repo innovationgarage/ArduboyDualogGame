@@ -121,8 +121,8 @@ void loop() {
       break;
 
     case MENU:
-    // doMenu();
-    //  break;
+      doMenu();
+      break;
 
     case FACE:
       doFace();

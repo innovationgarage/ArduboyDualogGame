@@ -4,7 +4,6 @@
 #include <Tinyfont.h>
 #include "Vector2d.h"
 #include "Waves.h"
-
 #include "music.h"
 #include "images.h"
 #include "faces.h"
@@ -20,12 +19,14 @@ const byte SPLASH = 1, MENU = 2,EXPLORING = 3, FACE = 99;
 //int gameState = SPLASH;
 int gameState = EXPLORING;
 
+const int framerate = 60;
+
 void setup() {
   arduboy.begin();
-  arduboy.setFrameRate(60);
+  arduboy.setFrameRate(framerate);
   arduboy.clear();
 
-  //initializeAudio();
+  initializeAudio();
 }
 
 void initializeAudio()

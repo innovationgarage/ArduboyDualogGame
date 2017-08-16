@@ -1,9 +1,4 @@
-#include "Vector2d.h"
-#include "Arduino.h"
-
 // From https://github.com/wvillanueva/StarHonor/blob/master/
-
-//#define Deg2Rad( Deg ) { Deg * PI / 180 };
 
 Vector2d::Vector2d()
 {
@@ -95,7 +90,7 @@ float Vector2d::Dot( Vector2d b )
 
 Vector2d Vector2d::Rotate( float angle )
 {
- /* float radian = Deg2Rad(angle);
+  float radian = Deg2Rad(angle);
   float cs = cos( radian );
   float sn = sin( radian );
 
@@ -103,11 +98,11 @@ Vector2d Vector2d::Rotate( float angle )
   float py = x * sn + y * cs;
 
   x = px;
-  y = py;*/
+  y = py;
 }
 
 float Deg2Rad( float Deg )
 {
-  //return ( Deg * PI / 180 );
+  return ( Deg * PI / 180 );
 }
 

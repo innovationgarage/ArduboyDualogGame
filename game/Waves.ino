@@ -1,5 +1,4 @@
-#include "Waves.h"
-#include "Arduino.h"
+// Based on https://github.com/wvillanueva/StarHonor/blob/master/
 
 Waves::Waves()
 {
@@ -8,8 +7,8 @@ Waves::Waves()
   for( int i(0); i < 20; i++ )
   {
     Wave w;
-    w.xPosition = random(0, 128);
-    w.yPosition = random(0, 64);
+    w.xPosition = random(0, WIDTH);
+    w.yPosition = random(0, HEIGHT);
     w.velocity = random(1, 25);
     _Waves[i] = w;
   }
@@ -30,7 +29,7 @@ void Waves::Move( Vector2d v )
   for( int i(0); i < 20; i++ )
   {
     Wave* Wave = &_Waves[i];
-    float velocityOverTime = Wave->velocity * DeltaTime;
+    float velocityOverTime = Wave->velocity * (1000/framerate);
     Wave->xPosition += v.x * velocityOverTime;
     Wave->yPosition += v.y * velocityOverTime;
 
@@ -40,34 +39,34 @@ void Waves::Move( Vector2d v )
 
 void Waves::BoundsCheck(Wave* Wave)
 {
-/*  bool setVelocity = false;
+  bool setVelocity = false;
   int xPos = Wave->xPosition;
   int yPos = Wave->yPosition;
-  if ( xPos > 128 )
+  if ( xPos > WIDTH )
   {
     Wave->xPosition = 0.0f;
-    Wave->yPosition = random(0, 64);
+    Wave->yPosition = random(0, HEIGHT);
     setVelocity = true;
   }
   else if ( xPos < 0 )
   {
-    Wave->xPosition = 128.0f;
-    Wave->yPosition = random(0, 64);
+    Wave->xPosition = WIDTH;
+    Wave->yPosition = random(0, HEIGHT);
     setVelocity = true;
   }
-  else if ( yPos > 63 )
+  else if ( yPos > HEIGHT-1 )
   {
-    Wave->xPosition = random(0, 128);
+    Wave->xPosition = random(0, WIDTH);
     Wave->yPosition = 0.0f;
     setVelocity = true;
   }
   else if ( yPos < 0 )
   {
-    Wave->xPosition = random(0, 128);
-    Wave->yPosition = 63;
+    Wave->xPosition = random(0, WIDTH);
+    Wave->yPosition = HEIGHT-1;
     setVelocity = true;
   }
   if ( setVelocity )
-    Wave->velocity = random(1, 25);*/
+    Wave->velocity = random(1, 25);
 }
 

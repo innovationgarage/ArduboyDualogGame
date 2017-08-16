@@ -1,6 +1,3 @@
-#ifndef VECTOR2D_H
-#define VECTOR2D_H
-
 // From https://github.com/wvillanueva/StarHonor/blob/master/
 
 class Vector2d
@@ -29,5 +26,3 @@ class Vector2d
 };
 
 static float Deg2Rad( float Deg );
-
-#endif
