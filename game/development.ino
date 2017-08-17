@@ -1,4 +1,4 @@
-void doSupportGame()
+void doDevelopmentGame()
 {
   arduboy.clear();
   arduboy.pollButtons();
@@ -8,7 +8,7 @@ void doSupportGame()
     gameState = MENU;
 
   tinyfont.setCursor(0, 0);
-  tinyfont.print("Support");
+  tinyfont.print("Development");
   arduboy.display();
 }
 
