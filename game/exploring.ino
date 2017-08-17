@@ -1,26 +1,31 @@
 double shipx = 0, shipy = 0;
 double shipspeed = 0, shipangle = 0;
-const int tilew = 8, tileh = 8;
+/*const int tilew = 8, tileh = 8;
 
-// Tile for the background
-void drawTile(int x, int y)
-{
+  // Tile for the background
+  void drawTile(int x, int y)
+  {
   //arduboy.drawRect(x * tilew, y * tileh, tilew, tileh);
 
   // Draw waves on the sea
   arduboy.drawPixel(tilew / 2 + x * tilew, tileh / 2 + y * tileh);
-}
+  }
 
-void drawSea()
-{
+  void drawSea()
+  {
   for (int i = 0; i < WIDTH / tilew; i++)
     for (int j = 0; j < HEIGHT / tileh; j++)
       if (j > 0 || i > 7)
         drawTile(i, j);
-}
+  }
+*/
+Waves* _sea = NULL;
 
 void doExploringGame()
 {
+  if (_sea == NULL)
+    _sea = new Waves();
+
   arduboy.clear();
   arduboy.pollButtons();
 
@@ -49,11 +54,16 @@ void doExploringGame()
     shipangle += 0.1;
   }
 
+  // Back to menu
+  if(arduboy.justPressed(B_BUTTON))
+    gameState = MENU;
+
 
   tinyfont.setCursor(0, 0);
   tinyfont.print("Exploring");
 
-  drawSea();
+  _sea->Move(Vector2d(shipspeed * cos(shipangle), shipspeed * sin(shipangle)));
+  _sea->Draw();
 
   // Draw boat
   arduboy.drawLine(WIDTH / 2, HEIGHT / 2, WIDTH / 2 + shipspeed * cos(shipangle), HEIGHT / 2 + shipspeed * sin(shipangle));

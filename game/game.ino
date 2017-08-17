@@ -16,8 +16,8 @@ Tinyfont tinyfont = Tinyfont(arduboy.sBuffer, Arduboy2::width(), Arduboy2::heigh
 
 const byte SPLASH = 1, MENU = 2,EXPLORING = 3, FACE = 99;
 
-//int gameState = SPLASH;
-int gameState = EXPLORING;
+int gameState = MENU;
+//int gameState = EXPLORING;
 
 const int framerate = 60;
 
