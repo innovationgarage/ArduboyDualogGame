@@ -178,7 +178,7 @@ void doMenu()
     case 1:
       if (color)
         arduboy.drawRect(64, 0, 63, 33);
-      left = 0; down = 3;
+      up = 1; left = 0; down = 3;
       break;
 
     case 2:
