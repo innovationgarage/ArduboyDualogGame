@@ -27,7 +27,7 @@ void Waves::Draw()
       arduboy.drawPixel( Wave.xPosition+random(-i,i+1), Wave.yPosition );
       }*/
 
-    x = Wave.xPosition;
+    int x = Wave.xPosition;
     arduboy.drawPixel( x, Wave.yPosition );
     arduboy.drawPixel(++x, Wave.yPosition - 1 );
     //  arduboy.drawPixel(++x, Wave.yPosition - 1 );

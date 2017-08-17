@@ -94,7 +94,7 @@ void doFace()
   arduboy.print(eyes, HEX);
   arduboy.print(hair, HEX);
 
-  arduboy.setCursor(62,64 -8);
+  arduboy.setCursor(62, 64 - 8);
   arduboy.print("XY#");
 
   arduboy.display();
@@ -225,6 +225,8 @@ void doMenu()
   }
   else
   {
+    int previous = selected;
+
     if (arduboy.justPressed(UP_BUTTON))
       selected = up;
 
@@ -237,7 +239,8 @@ void doMenu()
     if (arduboy.justPressed(RIGHT_BUTTON))
       selected = right;
 
-    tunes.tone(900, 100);
+    if (previous != selected)
+      tunes.tone(900, 100);
   }
 
   arduboy.display();
