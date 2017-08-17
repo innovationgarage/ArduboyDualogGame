@@ -14,7 +14,7 @@ ArduboyPlaytune tunes(arduboy.audio.enabled);
 Tinyfont tinyfont = Tinyfont(arduboy.sBuffer, Arduboy2::width(), Arduboy2::height());
 //ArduboyTones sound(arduboy.audio.enabled);
 
-const byte SPLASH = 1, MENU = 2,EXPLORING = 3, FACE = 99;
+const byte SPLASH = 1, MENU = 2,EXPLORING = 20, DEVELOPMENT = 40,SUPPORT = 60, FACE = 99;
 
 int gameState = MENU;
 //int gameState = EXPLORING;
