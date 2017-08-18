@@ -7,14 +7,17 @@ void loop() {
   {
     case SPLASH:
 
-      // play the tune if we aren't already
       if (!tunes.playing())
-        tunes.playScore(score);
+        tunes.playScore(intro);
 
       doSplash();
       break;
 
     case EXPLORING:
+
+      if (!tunes.playing())
+        tunes.playScore(exploring);
+
       doExploringGame();
       break;
 
@@ -23,10 +26,17 @@ void loop() {
       break;
 
     case SUPPORT:
+    
+      if (!tunes.playing())
+        tunes.playScore(support);
+
       doSupportGame();
       break;
 
     case MENU:
+      if (tunes.playing())
+        tunes.stopScore();
+
       doMenu();
       break;
 
