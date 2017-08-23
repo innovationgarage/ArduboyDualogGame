@@ -7,12 +7,14 @@
 #include "music.h"
 #include "images.h"
 #include "faces.h"
+#include "workstations.h"
 
 //Initialize the arduboy object
 Arduboy2 arduboy;
 ArduboyPlaytune tunes(arduboy.audio.enabled);
 Tinyfont tinyfont = Tinyfont(arduboy.sBuffer, Arduboy2::width(), Arduboy2::height());
 //ArduboyTones sound(arduboy.audio.enabled);
+Sprites sprites;
 
 const byte SPLASH = 1, MENU = 2,EXPLORING = 20, DEVELOPMENT = 40,SUPPORT = 60, FACE = 99;
 
