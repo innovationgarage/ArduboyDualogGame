@@ -22,6 +22,9 @@ void loop() {
       break;
 
     case DEVELOPMENT:
+      if (!tunes.playing())
+        tunes.playScore(development);
+    
       doDevelopmentGame();
       break;
 
@@ -88,30 +91,45 @@ void doMenu()
   {
     case 0:
       if (color)
+      {
         arduboy.drawRect(0, 0, 63, 33);
+        arduboy.drawRect(0, 0, 62, 32);
+      }
       break;
 
     case 1:
       if (color)
+      {
         arduboy.drawRect(64, 0, 63, 33);
+        arduboy.drawRect(64, 0, 62, 32);
+      }
       up = 1; left = 0; down = 3;
       break;
 
     case 2:
       if (color)
+      {
         arduboy.drawRect(0, 34, 63, 30);
+        arduboy.drawRect(0, 34, 62, 29);
+      }
       left = 2; right = 3; down = 2;
       break;
 
     case 3:
       if (color)
+      {
         arduboy.drawRect(64, 34, 31, 30);
+        arduboy.drawRect(64, 34, 30, 29);
+      }
       left = 2; up = 1; right = 4; down = 3;
       break;
 
     case 4:
       if (color)
+      {
         arduboy.drawRect(96, 34, 31, 30);
+        arduboy.drawRect(96, 34, 30, 29);
+      }
       left = 3; up = 1; right = 4; down = 4;
       break;
   }
@@ -123,6 +141,10 @@ void doMenu()
     delay(50);
     tunes.tone(900, 50);
 
+    arduboy.clear();
+    arduboy.display();
+    delay(100);
+    
     // Execute command
     switch (selected)
     {
