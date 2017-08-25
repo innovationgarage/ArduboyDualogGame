@@ -68,7 +68,7 @@ void doFace()
     (*s) = (*s) > 0 ? (*s) - 1 : limit;
 
   if (arduboy.justPressed(B_BUTTON))
-    gameState = MENU;
+    switchState(MENU);
 
   if (arduboy.justPressed(A_BUTTON))
   {

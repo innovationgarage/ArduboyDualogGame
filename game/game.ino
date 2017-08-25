@@ -16,9 +16,9 @@ Tinyfont tinyfont = Tinyfont(arduboy.sBuffer, Arduboy2::width(), Arduboy2::heigh
 //ArduboyTones sound(arduboy.audio.enabled);
 Sprites sprites;
 
-const byte SPLASH = 1, MENU = 2,EXPLORING = 20, DEVELOPMENT = 40,SUPPORT = 60, FACE = 99;
+const byte SPLASH = 1, MENU = 2,EXPLORING = 20, DEVELOPMENT = 40,SUPPORT = 60, FACE = 99, INVALID = 0;
 
-int gameState = MENU;
+byte gameState = MENU, oldState = INVALID;
 //int gameState = EXPLORING;
 
 const int framerate = 60;

@@ -1,3 +1,9 @@
+void switchState(byte newState)
+{
+  oldState = gameState;
+  gameState = newState;
+}
+
 void loop() {
   //Prevent the Arduboy from running too fast
   if (!arduboy.nextFrameDEV())
@@ -6,40 +12,32 @@ void loop() {
   switch (gameState)
   {
     case SPLASH:
-
       if (!tunes.playing())
         tunes.playScore(intro);
-
       doSplash();
       break;
 
     case EXPLORING:
-
       if (!tunes.playing())
         tunes.playScore(exploring);
-
       doExploringGame();
       break;
 
     case DEVELOPMENT:
       if (!tunes.playing())
         tunes.playScore(development);
-    
       doDevelopmentGame();
       break;
 
     case SUPPORT:
-    
       if (!tunes.playing())
         tunes.playScore(support);
-
       doSupportGame();
       break;
 
     case MENU:
       if (tunes.playing())
         tunes.stopScore();
-
       doMenu();
       break;
 
@@ -144,28 +142,28 @@ void doMenu()
     arduboy.clear();
     arduboy.display();
     delay(100);
-    
+
     // Execute command
     switch (selected)
     {
       case 0:
-        gameState = EXPLORING;
+        switchState(EXPLORING);
         break;
 
       case 1:
-        gameState = DEVELOPMENT;
+        switchState(DEVELOPMENT);
         break;
 
       case 2:
-        gameState = SUPPORT;
+        switchState(SUPPORT);
         break;
 
       case 3:
-        gameState = FACE;
+        switchState(FACE);
         break;
 
       case 4:
-        gameState = SPLASH;
+        switchState(SPLASH);
         break;
     }
   }

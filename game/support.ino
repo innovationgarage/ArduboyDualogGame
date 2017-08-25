@@ -5,7 +5,7 @@ void doSupportGame()
 
   // Back to menu
   if (arduboy.justPressed(B_BUTTON))
-    gameState = MENU;
+    switchState(MENU);
 
   tinyfont.setCursor(0, 0);
   tinyfont.print("Support");
