@@ -39,6 +39,7 @@ void loop() {
       if (tunes.playing())
         tunes.stopScore();
       doMenu();
+      
       break;
 
     case FACE:
