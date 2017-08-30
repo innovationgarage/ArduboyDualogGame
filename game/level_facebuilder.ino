@@ -1,6 +1,3 @@
-unsigned int selected = 0;
-long current = 0;
-
 unsigned char* const chins[] = { l8_01, l8_02, l8_03, l8_04, l8_05, l8_06, l8_07, l8_08, l8_09, l8_10, l8_11, l8_12, l8_13, l8_14 };
 unsigned char* const noses[] = { l7_01, l7_02, l7_03, l7_04, l7_05, l7_06, l7_07, l7_08, l7_09, l7_10, l7_11, l7_12, l7_13, l7_14 };
 unsigned char* const hairlows[] = { l6_01, l6_02, l6_03, l6_04, l6_05, l6_06, l6_07, l6_08, l6_09, l6_10, l6_11, l6_12, l6_13, l6_14 };
@@ -68,7 +65,7 @@ void doFace()
     (*s) = (*s) > 0 ? (*s) - 1 : limit;
 
   if (arduboy.justPressed(B_BUTTON))
-    switchState(MENU);
+    switchState(MAINMENU);
 
   if (arduboy.justPressed(A_BUTTON))
   {

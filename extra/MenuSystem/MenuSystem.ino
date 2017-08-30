@@ -1,14 +1,16 @@
-#include "Player.h"
-#include "Utility.h"
-#include "Menu.h"
-#include "EquipmentMenu.h"
-#include "DemoMenu.h"
+#include <Arduboy2.h>
+#include <Tinyfont.h>
+#include "Structs.h"
+#include "Menus.h"
 
 Arduboy2 arduboy;
+Tinyfont tinyfont = Tinyfont(arduboy.sBuffer, Arduboy2::width(), Arduboy2::height());
 Player player;
+
 
 void setup()
 {
+  player.equipment = 0;
   arduboy.begin();
 }
 
@@ -21,18 +23,18 @@ void loop2()
   {
     if (arduboy.nextFrame())
     {
-
       arduboy.pollButtons();
 
-
       if (arduboy.justPressed(B_BUTTON))
+        return; // Return to first loop
+
+      if (arduboy.justPressed(A_BUTTON))
       {
-        return;
+        ApplyProgmemMenuAction(player, DemoMenu, menuIndex);
       }
 
-
       arduboy.clear();
-      DrawProgmemMenu(arduboy, DemoMenu, menuIndex);
+      DrawProgmemMenu(DemoMenu, menuIndex);
       arduboy.display();
     }
   }
@@ -68,6 +70,6 @@ void loop()
 
 
   arduboy.clear();
-  DrawProgmemMenu(arduboy, EquipmentMenu, menuIndex);
+  DrawProgmemMenu(EquipmentMenu, menuIndex);
   arduboy.display();
 }

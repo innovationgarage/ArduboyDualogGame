@@ -2,10 +2,12 @@
 #include <ArduboyPlaytune.h>
 //#include <ArduboyTones.h>
 #include <Tinyfont.h>
-#include "Vector2d.h"
-#include "Waves.h"
+#include "vector2d.h"
+#include "structs.h"
+#include "waves.h"
 #include "music.h"
 #include "images.h"
+#include "menus.h"
 #include "faces.h"
 #include "workstations.h"
 //#include "menusdefinition.h"
@@ -17,12 +19,17 @@ Tinyfont tinyfont = Tinyfont(arduboy.sBuffer, Arduboy2::width(), Arduboy2::heigh
 //ArduboyTones sound(arduboy.audio.enabled);
 Sprites sprites;
 
-const byte SPLASH = 1, MENU = 2,EXPLORING = 20, DEVELOPMENT = 40,SUPPORT = 60, FACE = 99, INVALID = 0;
+const byte SPLASH = 1, MAINMENU = 2,EXPLORING = 20, DEVELOPMENT = 40,SUPPORT = 60, FACE = 99, INVALID = 0;
 
-byte gameState = MENU, oldState = INVALID;
+byte gameState = MAINMENU, oldState = INVALID;
 //int gameState = EXPLORING;
 
 const int framerate = 60;
+
+// For timekeeping
+// TODO: clean this!
+unsigned long current = 0;
+unsigned int selected = 0;
 
 void setup() {
   arduboy.begin();

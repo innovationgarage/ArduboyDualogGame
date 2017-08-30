@@ -5,11 +5,10 @@ const byte width = 38, height = 28;
 const byte supportSlotsX[] = { 10, 10 + 38, 10 + 38 + 38, 10, 10 + 38, 10 + 38 + 38,};
 const byte supportSlotsY[] = { 8, 8, 8, 8 + 28, 8 + 28, 8 + 28,};
 
-byte chooseDialog(byte selected)
-{
-}
+const Menu empty PROGMEM = {"",0,0,};
+Menu currentMenu = empty;
 
-bool showMenu = false;
+//bool showMenu = false;
 void doSupportGame()
 {
   arduboy.clear();
@@ -32,16 +31,16 @@ void doSupportGame()
   }
 
   // Keys
-  if (!showMenu)
+  if (currentMenu==empty)
   {
 
     // Back to menu
     if (arduboy.justPressed(B_BUTTON))
-      switchState(MENU);
+      switchState(MAINMENU);
     else
     {
       if (arduboy.justPressed(A_BUTTON))
-        showMenu = true;
+        currentMenu = DemoMenu;
       else
       {
         if (arduboy.justPressed(RIGHT_BUTTON) && selectedSupportSlot < totalSupportSlots - 1)
@@ -88,7 +87,7 @@ void doSupportGame()
     tinyfont.print(" Mainframe");
 
     if (arduboy.justPressed(B_BUTTON))
-      showMenu = false;
+      currentMenu = empty;
   }
 
   arduboy.display();

@@ -35,7 +35,7 @@ void loop() {
       doSupportGame();
       break;
 
-    case MENU:
+    case MAINMENU:
       if (tunes.playing())
         tunes.stopScore();
       doMenu();
@@ -232,5 +232,5 @@ void doSplash()
   tunes.tone(987, 120);
   delay(60);
   tunes.tone(1318, 400);
-  gameState = MENU;
+  gameState = MAINMENU;
 }

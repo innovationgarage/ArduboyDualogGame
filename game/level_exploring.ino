@@ -56,8 +56,7 @@ void doExploringGame()
 
   // Back to menu
   if(arduboy.justPressed(B_BUTTON))
-    switchState(MENU);
-
+    switchState(MAINMENU);
 
   tinyfont.setCursor(0, 0);
   tinyfont.print("Exploring");
